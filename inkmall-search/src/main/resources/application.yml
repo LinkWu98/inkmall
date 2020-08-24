@@ -1,0 +1,43 @@
+server:
+  port: 18086
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    sentinel:
+      transport:
+        port: 8719
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+    discovery-client-enabled: false
+
+  sleuth:
+    sampler:
+      probability: 1
+
+  elasticsearch:
+    rest:
+      uris:
+        - http://192.168.153.188:9200
+  #不反序列化空字符串
+  jackson:
+    default-property-inclusion: non_null
+
+  rabbitmq:
+    host: 192.168.153.188
+    username: link
+    password: link
+    virtual-host: /link
+    listener:
+      direct:
+        acknowledge-mode: manual #消费者手动确认模式
+        prefetch: 1 # 能者多劳(默认平均分配)
+
+feign:
+  sentinel:
+    enabled: true

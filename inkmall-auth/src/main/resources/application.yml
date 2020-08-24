@@ -1,0 +1,32 @@
+server:
+  port: 18089
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 127.0.0.1:8080
+
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+    discovery-client-enabled: false
+
+  sleuth:
+    sampler:
+      probability: 1
+
+feign:
+  sentinel:
+    enabled: true
+
+jwt:
+  publicKeyPath: D:\\Develop\\rsa\\rsa.pub
+  cookieName: INKMALL-TOKEN
+  userKeyCookieName: user-key
+  userKeyCookieExpire: 15552000

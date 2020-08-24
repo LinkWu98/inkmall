@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gmall-generator" />
+        <module name="inkmall-admin" />
+        <module name="inkmall-auth" />
+        <module name="inkmall-cart" />
+        <module name="inkmall-cart-interface" />
+        <module name="inkmall-common" />
+        <module name="inkmall-gateway" />
+        <module name="inkmall-index" />
+        <module name="inkmall-item" />
+        <module name="inkmall-mq" />
+        <module name="inkmall-oms" />
+        <module name="inkmall-oms-interface" />
+        <module name="inkmall-order" />
+        <module name="inkmall-pms" />
+        <module name="inkmall-pms-interface" />
+        <module name="inkmall-search" />
+        <module name="inkmall-sms" />
+        <module name="inkmall-sms-interface" />
+        <module name="inkmall-ums" />
+        <module name="inkmall-ums-interface" />
+        <module name="inkmall-wms" />
+        <module name="inkmall-wms-interface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gmall-generator" target="1.8" />
+      <module name="inkmall" target="1.8" />
+      <module name="inkmall-admin" target="1.8" />
+      <module name="inkmall-auth" target="1.8" />
+      <module name="inkmall-cart" target="1.8" />
+      <module name="inkmall-cart-interface" target="1.8" />
+      <module name="inkmall-common" target="1.8" />
+      <module name="inkmall-gateway" target="1.8" />
+      <module name="inkmall-generator" target="1.8" />
+      <module name="inkmall-index" target="1.8" />
+      <module name="inkmall-item" target="1.8" />
+      <module name="inkmall-mq" target="1.8" />
+      <module name="inkmall-oms" target="1.8" />
+      <module name="inkmall-oms-interface" target="1.8" />
+      <module name="inkmall-order" target="1.8" />
+      <module name="inkmall-pms" target="1.8" />
+      <module name="inkmall-pms-interface" target="1.8" />
+      <module name="inkmall-search" target="1.8" />
+      <module name="inkmall-sms" target="1.8" />
+      <module name="inkmall-sms-interface" target="1.8" />
+      <module name="inkmall-ums" target="1.8" />
+      <module name="inkmall-ums-interface" target="1.8" />
+      <module name="inkmall-wms" target="1.8" />
+      <module name="inkmall-wms-interface" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gmall-generator" options="-parameters" />
+      <module name="inkmall-admin" options="-parameters" />
+      <module name="inkmall-auth" options="-parameters" />
+      <module name="inkmall-cart" options="-parameters" />
+      <module name="inkmall-cart-interface" options="-parameters" />
+      <module name="inkmall-common" options="-parameters" />
+      <module name="inkmall-gateway" options="-parameters" />
+      <module name="inkmall-generator" options="-parameters" />
+      <module name="inkmall-index" options="-parameters" />
+      <module name="inkmall-item" options="-parameters" />
+      <module name="inkmall-mq" options="-parameters" />
+      <module name="inkmall-oms" options="-parameters" />
+      <module name="inkmall-oms-interface" options="-parameters" />
+      <module name="inkmall-order" options="-parameters" />
+      <module name="inkmall-pms" options="-parameters" />
+      <module name="inkmall-pms-interface" options="-parameters" />
+      <module name="inkmall-search" options="-parameters" />
+      <module name="inkmall-sms" options="-parameters" />
+      <module name="inkmall-sms-interface" options="-parameters" />
+      <module name="inkmall-ums" options="-parameters" />
+      <module name="inkmall-ums-interface" options="-parameters" />
+      <module name="inkmall-wms" options="-parameters" />
+      <module name="inkmall-wms-interface" options="-parameters" />
+    </option>
+  </component>
+</project>

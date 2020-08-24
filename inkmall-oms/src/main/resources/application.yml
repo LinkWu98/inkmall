@@ -1,0 +1,63 @@
+#nacos
+#sentinel
+#datasource
+#zipkin
+#seluth
+#redis
+#feign
+#mybatis-plus
+server:
+  port: 18084
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli_oms
+    username: root
+    password: root
+
+  zipkin:
+    base-url: http://localhost:9411/
+    #��·׷�ٷ�ʽ: web rabbit activemq kafka
+    sender:
+      type: web
+    #��׷��zipkin�Լ�������
+    discovery-client-enabled: false
+
+  sleuth:
+    sampler:
+      probability: 1
+
+#redis����
+  redis:
+    host: 192.168.153.188
+
+feign:
+  sentinel:
+    enabled: true
+
+
+#mbp����
+mybatis-plus:
+  mapper-locations: classpath:mapper/oms/**/*.xml
+  #��ʡ�԰�������ɨ�裬mapper��resultType��resultMapʹ��entity����ʱ
+  type-aliases-package: cn.link.inkmall.oms.entity
+  #id���ԣ�����
+  global-config:
+    db-config:
+      id-type: auto
+
+thread:
+  pool:
+    corePoolSize: 100
+    maximumPoolSize: 500
+    # 单位：分钟
+    keepAliveTime: 3
+    blockingQueueSize: 1000

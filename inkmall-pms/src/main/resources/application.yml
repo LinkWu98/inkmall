@@ -1,0 +1,69 @@
+server:
+  port: 18081
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+#sentinel熔断降级、限流配置
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        #与dashboard连接的端口号，被占用就递增
+        port: 8719
+#zipkin链路追踪配置
+  zipkin:
+    base-url: http://localhost:9411
+    #链路追踪方式: web rabbit activemq kafka
+    sender:
+      type: web
+    #不追踪zipkin自己的请求
+    discovery-client-enabled: false
+  #采样率 100%
+  sleuth:
+    sampler:
+      probability: 1
+  #数据库配置四大参数
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli_pms
+    username: root
+    password: root
+#redis配置
+  redis:
+    host: 192.168.153.188
+
+#rabbitmq配置
+  rabbitmq:
+    host: 192.168.153.188
+    username: link
+    password: link
+    virtual-host: /link
+    #生产者确认
+    publisher-returns: true
+#开启远程调用
+feign:
+  sentinel:
+    enabled: true
+  httpclient:
+    connection-timeout: 30000
+
+#mbp配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/pms/**/*.xml
+  #可省略包名别名扫描，mapper中resultType或resultMap使用entity对象时
+  type-aliases-package: cn.link.inkmall.pms.entity
+  #id策略，自增
+  global-config:
+    db-config:
+      id-type: auto
+
+#oss配置
+oss:
+  accessKeyId: LTAI4G7jJ6FXQhzFBkzb9mFh
+  accessKeySecret: igAfghAn51klGC4vEkAVNOVACylGRp
+  bucket: gmall-50
+  endpoint: oss-cn-shanghai.aliyuncs.com

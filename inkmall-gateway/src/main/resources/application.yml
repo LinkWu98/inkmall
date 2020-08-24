@@ -1,0 +1,64 @@
+server:
+  port: 8888
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: sms-route
+          uri: lb://sms-service
+          predicates:
+            - Path=/sms/**
+        - id: pms-route
+          uri: lb://pms-service
+          predicates:
+            - Path=/pms/**
+        - id: oms-route
+          uri: lb://oms-service
+          predicates:
+            - Path=/oms/**
+        - id: wms-route
+          uri: lb://wms-service
+          predicates:
+            - Path=/wms/**
+        - id: ums-route
+          uri: lb://ums-service
+          predicates:
+            - Path=/ums/**
+        - id: search-route
+          uri: lb://search-service
+          predicates:
+            - Path=/search/**
+        - id: index-route
+          uri: lb://index-service
+          predicates:
+            - Path=/index/**
+        - id: item-route
+          uri: lb://item-service
+          predicates:
+            - Path=/item/**
+        - id: auth-route
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+        - id: cart-route
+          uri: lb://cart-service
+          predicates:
+            - Path=/cart/**
+        - id: order-route
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+          filters:
+            - Auth
+
+      x-forwarded:
+        host-enabled: true
+
+jwt:
+  publicKeyPath: D:\\Develop\\rsa\\rsa.pub
+  cookieName: INKMALL-TOKEN

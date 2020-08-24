@@ -1,0 +1,61 @@
+server:
+  port: 18092
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+    discovery-client-enabled: false
+
+  sleuth:
+    sampler:
+      probability: 1
+
+  redis:
+    host: 192.168.153.188
+
+  rabbitmq:
+    host: 192.168.153.188
+    username: link
+    password: link
+    virtual-host: /link
+    listener:
+      direct:
+        prefetch: 1
+        acknowledge-mode: manual
+
+feign:
+  sentinel:
+    enabled: true
+
+jwt:
+  publicKeyPath: D:\\Develop\\rsa\\rsa.pub
+  cookieName: INKMALL-TOKEN
+
+thread:
+  pool:
+    coreSize: 100
+    maxSize: 500
+    aliveTime: 5
+    blockingQueueSize: 1000
+
+alipay:
+  app_id: 2016101900720323
+  #支付宝公钥
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjeg/orbBWlyWmDbRLqSZF4gkLfJNfiiof2XNUS5JKCcUvI6Uaa0s+Gyj4/uATmJoTjAC7QzKobLvsFAQaQ/owEGDdhu76LXCI659dF3dRoiQy94/Q94fovjdwU94Fx2DRCiLr5BPi/v0NgNf9aHZKPvW2AJd+wlAnGFxsc45JCEFWj51bdpbnHq3VI9EAbADnmZe1PVWoTsdCAWFBmpZJ2BRYmuxwPKQwiz2OqE9XRloJgejN/YaxhS9Sn5Kp5Z7Ypw8E9NGVbw9OoqTQerwY5L1JET+TPXvfrpD5eior2blJ1aSZt1gAmhQgxNJ0uOvua5tx5ERBE2D/m2AaZyBBQIDAQAB
+  #商户私钥
+  merchant_private_key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8u0nawRY++dadRdxXV0bhX4+1F06tVfseMb4tQLn4puqF9nW1a75qlwgi2iPNfKsLMC8VTc48IyK/jYinSMPosGaUA/OjYdItBgQZEKwYbJ45/MKBEnLY20PFHKCzI2IXn+Yo9SRvCqb0heXQR+CH7WfFEviaWAmgKmSWR4lcU9XN4yMErq0u73sWZtCrVb048vsXA1zNq1sACawgK76tG8pN1+dNf/lhdSytXMPAq8aNmWpAwvibyhaE603h62exAEPeNKOnTDzNXBZfblZREWKB2RciDRGWwEHy7M8eIAbxej1ukRjcQFOVTkebfhWM+Zw2uY7UAC1g5kbnT0QtAgMBAAECggEAdJrWb5R6lSAxS+w8za27ukUbecxTrN6Bj082a6kg/ZLLNUdnxFY0SJDV0wqpsizDVN9JR8VRlXAz6NueQZTAjcRnLC4g2qH2hCDCaWYWneSGAde7qJloYble7qrYUrWaxnPhdQ64mu6e5lbP/VZbUEAKrAUjmeCo2c83ZG4AXQzTGMEyHVUYyR3sEF2Oxk0jp4nkmte2RNIisXIXPmf2cMd3WVrYi6fvPnKE6TAEeBGvtjwkvek117r0KXEk2uQSbIm2pPLwPKCMKGQXFgbXkH5ORSPnq2dWoQcv2GD5dCdu96DvAk5ZjIEP0QAyAwfwfPQUUUPO4piHbTL1+GsN9QKBgQDl/7S8HlkWfcS5Z7btxAwBIKMm2FhaNa5VU8Nw+uaFXC3PQe4dk9Qq/Ol+v9QRqUQoq/m0c9fRpMzzVqn6+I6EMJtPWiWOnAuqScgL64r2TuQHGUIoSgvK5kmAgIOFVc3zAbAlC0dMRc9Gc6Bq5TWZX59NI7UTSDdj46A/iawuswKBgQDSEUkIXszD1sMGIHRfbiHvgR75nJ+CTXuUn/jqnTewSUYWtUhXCkwsocXugbMfABsSqapQHfjRAyKq9tZkMMF52BxAtyi8v4fB629F6f9MHBzJniBiDGepJuVnluleSQN9YZL8OfTfE0RecYZKS/DY25glgJvsAzST0F9kpNoxnwKBgFm0fvB0Qbj0+rp5ii54LVpvOVMYRHWCxGkBT5QMN8bB6hgRFecxVioiFIvcE8GDrFLUqILKP93DkjBCl++L7EIAl0K+3TEfCam0NzL2/m8M3AEsx9Hg93J+mSJmfWWOztG90c7Q9FD6VVqcFHA8z8fvNLmoeKJ5oyjxifneH2rjAoGAMHVIUaP8vFh4WJt3/OOc9HDmwlH9AcP59AkLFKP7yrC8eFSNQXbgp5MR47kLpuURWbbF0QF4+k4s2x9hyW7t0rulmNAnl5LfMD6tRoV6HQaHJYNSmQufhgew97p6TwOsyGmPzJtZ/3OkW9z4S39FKeFOMah/T2xV3ps8xiy5IKUCgYEAx5f4sxy7dD7fJ8HTjahDMxnbMu3B7Igfj/j71qQToHf0UhFSsIDk0GmfjMNAQ/xqgVk+/C5mBb5WS3rbQ5qopZkAtUswxj+sB/+ArV3ZOYPk5swQRm7iCPqC3nQUba1fv6jiUcwNf/R9NVPK0Qvx7dJBYC2aQgkzrPFo5JffvaY=
+  #异步回调地址，使用内网穿透路径
+  notify_url: http://api.gmall.com/order/pay/success
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do

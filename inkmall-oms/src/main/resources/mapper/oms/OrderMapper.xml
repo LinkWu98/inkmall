@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.link.inkmall.oms.mapper.OrderMapper">
+
+    <!-- 这是一个延时队列的修改，因此要注意，若用户在指定时间内支付成功并修改订单状态后，就不能再修改使订单失效了 -->
+    <update id="closeOrder">
+        update oms_order
+        set status = 4
+        where order_sn = #{orderToken} and status = 0
+    </update>
+    <update id="paySuccess">
+        update oms_order
+        set status = 1
+        where order_sn = #{orderToken}
+    </update>
+</mapper>

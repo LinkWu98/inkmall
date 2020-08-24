@@ -1,0 +1,7 @@
+# Project exclude paths
+/gmall-generator/target/
+/inkmall-admin/target/
+/inkmall-common/target/
+/inkmall-pms-interface/target/
+/inkmall-sms-interface/target/
+/inkmall-wms-interface/target/
